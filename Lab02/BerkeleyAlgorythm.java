@@ -50,12 +50,10 @@ class Coordinator {
         clocks[id] = clock;
         nodes[id] = node;
         clocksReceived++;
-
         if (clocksReceived == totalNodes) {
             synchronizeClocks();
         }
     }
-
     private void synchronizeClocks() {
         int sum = 0;
         for (int clock : clocks) {
